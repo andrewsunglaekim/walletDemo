@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app='walletDemo'>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/index.css">
+  <script src="../../node_modules/angular/angular.js"></script>
+  <script src='app.js'></script>
+  <script src='wallet.controller.js'></script>
+  <script src='../data/dataforClientJS.js'></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="App" data-ng-controller='walletController as wVM'>
+    <div class="walletsWidget">
+      <div class="shadow">
+        <div class="section left">
+          <header>
+            <div class="name">My Wallets</div>
+            <div class="plus">+</div>
+          </header>
+          <div class="cards">
+            <div class="card" data-ng-class="{active: card.id == wVM.currentWallet.id}"data-ng-repeat='card in wVM.wallets' data-ng-click='wVM.selectWallet(card)'>
+              <img data-ng-src='{{wVM.getImageSrc(card.cardType)}}' alt='credit card logo'>
+              <div class="cardNum">{{card.cardNo}}</div>
+              <div class="expDate">Valid Thru: {{wVM.formatDate(card.expDate)}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="section right">
+          <div class="balance">
+            <div class="title">Current Balance</div>
+            <div class="values">
+              <span class="dollars">${{wVM.currentWallet.balanceDollars}}.</span><span class="cents">{{wVM.currentWallet.balanceCents}}</span>
+            </div>
+          </div>
+          <div class="transactions">
+            <div class="transaction" data-ng-repeat='transaction in wVM.currentWallet.transactions'>
+              <div class="beginning">
+                <div class="transactionType">{{transaction.type == 'deduction' ? '-' : '+'}}</div>
+              </div>
+              <div class="middle">
+                <div class="title">{{transaction.title}}</div>
+                <div class="description">
+                  <div class="text">{{transaction.description}}</div>
+                  <div class="date">{{wVM.formatDateWithDay(transaction.date)}}</div>
+                </div>
+              </div>
+              <div class="amount" data-ng-class="{credit: transaction.type == 'credit', deduction: transaction.type =='deduction'}">
+                <span>{{transaction.amountDollars}}</span>
+                <span class="cents">{{transaction.amountCents}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
