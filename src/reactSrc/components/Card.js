@@ -24,10 +24,10 @@ class Card extends Component {
   render() {
     const {card, onCardClick} = this.props
     return (
-      <div className={`card ${this.props.currentWallet.id == card.id ? 'active': undefined}`}>
+      <div className={`card ${this.props.currentWallet.id == card.id ? 'active': undefined}`}
+           onClick={() => onCardClick(card.id)}>
         <img src={this.grabImage(card.cardType)}
-             alt={this.grabImage(card.cardType)}
-             onClick={() => onCardClick(card.id)}/>
+             alt={this.grabImage(card.cardType)} />
         <div className='cardNum'>{card.cardNo}</div>
         <div className='expDate'>Valid Thru: {this.formatDate(card.expDate)}</div>
       </div>

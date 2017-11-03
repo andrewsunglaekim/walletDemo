@@ -108,14 +108,6 @@ let wallets = [
       },
       {
         title: 'Propane',
-        description: 'Gas #243179',
-        type: 'credit',
-        date: new Date(2015, 6, 9),
-        amountDollars: '7502',
-        amountCents: '63'
-      },
-      {
-        title: 'Propane',
         description: 'Gas #243174',
         type: 'credit',
         date: new Date(2015, 6, 9),
@@ -155,14 +147,6 @@ let wallets = [
         date: new Date(1997, 6, 11),
         amountDollars: '35999',
         amountCents: '25'
-      },
-      {
-        title: 'Coon and Friends Merchandise',
-        description: 'Merchandise #143556',
-        type: 'credit',
-        date: new Date(2017, 6, 11),
-        amountDollars: '15249',
-        amountCents: '16'
       },
       {
         title: 'Bounty Hunting Money',
