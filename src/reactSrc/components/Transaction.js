@@ -11,7 +11,6 @@ class Transaction extends Component {
 
   render(){
     const {title, description, type, date, amountDollars, amountCents} = this.props.transaction
-    console.log(this.props);
     return (
       <div className='transaction'>
         <div className='beginning'>

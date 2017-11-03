@@ -24,7 +24,7 @@ class Card extends Component {
   render() {
     const {card, onCardClick} = this.props
     return (
-      <div className='card'>
+      <div className={`card ${this.props.currentWallet.id == card.id ? 'active': undefined}`}>
         <img src={this.grabImage(card.cardType)}
              alt={this.grabImage(card.cardType)}
              onClick={() => onCardClick(card.id)}/>

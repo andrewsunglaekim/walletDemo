@@ -29,7 +29,8 @@ class Wallets extends Component {
           <div className='section left'>
             <Header />
             <Cards wallets={this.state.wallets}
-                   onCardClick={this.chooseWallet}/>
+                   onCardClick={this.chooseWallet}
+                   currentWallet={this.state.currentWallet}/>
           </div>
           <div className='section right'>
             <Balance balanceDollars={this.state.currentWallet.balanceDollars}

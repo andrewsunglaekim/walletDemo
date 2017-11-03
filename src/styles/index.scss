@@ -70,6 +70,10 @@ div.card {
   background: #fff;
   color: #818181;
 
+  &.active {
+    border: 2.5px solid #8393CA;
+  }
+
   img {
     margin-bottom: 0.8em;
     width: 70px;

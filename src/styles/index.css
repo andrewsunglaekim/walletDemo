@@ -47,6 +47,8 @@ div.card {
   padding: 1em;
   background: #fff;
   color: #818181; }
+  div.card.active {
+    border: 2.5px solid #8393CA; }
   div.card img {
     margin-bottom: 0.8em;
     width: 70px;
