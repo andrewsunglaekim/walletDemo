@@ -14,19 +14,20 @@ class Transaction extends Component {
     console.log(this.props);
     return (
       <div className='transaction'>
-        <div className='transactionType'>{type == 'deduction' ? "-" : "+"}</div>
-        <div>
+        <div className='beginning'>
+          <div className='transactionType'>{type == 'deduction' ? "-" : "+"}</div>
+        </div>
+        <div className='middle'>
           <div className='title'>{title}</div>
           <div className='description'>
-            <div className='text'>{description}</div>
+            <div className='text'>{description}</div>-
             <div className='date'>{this.formatDate(date)}</div>
           </div>
-          <div className='balance'>
-            <span>${amountDollars}.</span>
-            <span>{amountCents}</span>
-          </div>
         </div>
-        this is a transaction
+        <div className={`amount ${type}`}>
+          <span>${amountDollars}.</span>
+          <span className='cents'>{amountCents}</span>
+        </div>
       </div>
     )
   }

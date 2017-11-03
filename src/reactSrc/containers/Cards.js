@@ -7,7 +7,7 @@ class Cards extends Component {
       return <Card key={wallet.id} card={wallet} onCardClick={this.props.onCardClick}/>
     })
     return (
-      <div>
+      <div className='cards'>
         {cards}
       </div>
     )

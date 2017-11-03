@@ -25,15 +25,17 @@ class Wallets extends Component {
   render() {
     return (
       <div className='walletsWidget'>
-        <div className='section left'>
-          <Header />
-          <Cards wallets={this.state.wallets}
-                 onCardClick={this.chooseWallet}/>
-        </div>
-        <div className='section right'>
-          <Balance balanceDollars={this.state.currentWallet.balanceDollars}
-                   balanceCents={this.state.currentWallet.balanceCents}/>
-          <Transactions wallet={this.state.currentWallet} />
+        <div className='shadow'>
+          <div className='section left'>
+            <Header />
+            <Cards wallets={this.state.wallets}
+                   onCardClick={this.chooseWallet}/>
+          </div>
+          <div className='section right'>
+            <Balance balanceDollars={this.state.currentWallet.balanceDollars}
+                     balanceCents={this.state.currentWallet.balanceCents}/>
+            <Transactions wallet={this.state.currentWallet} />
+          </div>
         </div>
       </div>
     )

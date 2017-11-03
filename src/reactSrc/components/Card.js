@@ -24,12 +24,12 @@ class Card extends Component {
   render() {
     const {card, onCardClick} = this.props
     return (
-      <div>
+      <div className='card'>
         <img src={this.grabImage(card.cardType)}
              alt={this.grabImage(card.cardType)}
              onClick={() => onCardClick(card.id)}/>
-        <div>{card.cardNo}</div>
-        <div>Valid Thru: {this.formatDate(card.expDate)}</div>
+        <div className='cardNum'>{card.cardNo}</div>
+        <div className='expDate'>Valid Thru: {this.formatDate(card.expDate)}</div>
       </div>
     )
   }

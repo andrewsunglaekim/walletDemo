@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 class Balance extends Component {
   render(){
     return (
-      <div>
-        <div>Current Balance</div>
-        <div>
-          <span>${this.props.balanceDollars}.</span>
-          <span>{this.props.balanceCents}</span>
+      <div className='balance'>
+        <div className='title'>Current Balance</div>
+        <div className='values'>
+          <span className='dollars'>${this.props.balanceDollars}.</span>
+          <span className='cents'>{this.props.balanceCents}</span>
         </div>
       </div>
     )

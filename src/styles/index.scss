@@ -1,9 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+@mixin centerWithFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
-h1 {
-  color: blue;
+div.App{
+  background: #FFCC66;
+}
+
+div.walletsWidget {
+  width: calc(100% - 100px);
+  padding: 50px;
+
+  div.shadow {
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,.4);
+  }
+
+  div.section {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+
+    &.left {
+      flex: 4;
+      background: #f2f2f2;
+      border-radius: 10px 0 0 10px;
+    }
+
+    &.right {
+      flex: 6;
+      background: #fff;
+      border-radius: 0 10px 10px 0;
+    }
+  }
+}
+
+/* Header Styles */
+div.section.left header {
+  display: flex;
+  font-size: 1.5em;
+
+  div.name {
+    flex: 6;
+    color: #888;
+  }
+
+  div.plus {
+    flex: 1;
+    font-size: 1.2em;
+    color: #c5c5c5;
+  }
+}
+
+/* Card Styles */
+div.card {
+  margin-top: 2.5em;
+  border: 2.5px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  background: #fff;
+  color: #818181;
+
+  img {
+    margin-bottom: 0.8em;
+    width: 70px;
+    border-radius: 5px;
+  }
+
+  div.cardNum {
+    font-size: 1.2em;
+  }
+
+  div.expDate {
+    font-size: 0.95em;
+    color: #bbb;
+  }
+}
+
+/* Balance styles */
+div.balance {
+  padding-bottom: 1.7em;
+  border-bottom: 2px solid rgba(200, 200, 200, 0.2);
+  margin-bottom: 1.7em;
+  padding-top: 0.4em;
+  display: flex;
+  font-size: 1.2em;
+
+  div.title {
+    flex: 6;
+    color: #888;
+  }
+
+  div.values {
+    flex: 1;
+    font-size: 1.5em;
+    font-weight:700;
+    transform: translateY(-0.4em);
+    color: #4f4f4f;
+
+    span.cents {
+      vertical-align: super;
+      font-size: 0.5em;
+    }
+  }
+}
+
+/* Transaction Styles */
+div.transaction {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.1em;
+
+  div.beginning {
+    flex: 0.9;
+
+    div.transactionType {
+      @include centerWithFlex;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  div.middle {
+    flex: 8;
+
+    div.title {
+      font-size: 0.88em;
+      font-weight: 700;
+      color: #4f4f4f;
+    }
+
+    div.description {
+      margin-top: 0.2em;
+      display: flex;
+      font-size: 0.75em;
+      color: #c4c4c4;
+
+      div.text{
+        margin-right: 0.5em;
+      }
+
+      div.date {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  div.amount {
+    flex: 2;
+    font-size: 0.9em;
+
+    &.deduction {
+      color: #8393CA;
+    }
+
+    &.credit {
+      color: #66CC33;
+    }
+
+    span.cents {
+      vertical-align: super;
+      font-size: 0.5em;
+    }
+  }
 }
