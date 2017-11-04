@@ -1,12 +1,12 @@
-function Card(cardType, cardNum, expDate, balanceDollars, balanceCents, transactions){
-  this.id = id
-  this.cardType = cardType
-  this.cardNum = cardNum
-  this.expDate = expDate
-  this.balanceDollars = balanceDollars
-  this.balanceCents = balanceCents
-  this.transactions = transactions.map((transaction) => {
-    return new Transaction()
+function Card(card){
+  this.id = card.id
+  this.cardType = card.cardType
+  this.cardNum = card.cardNo
+  this.expDate = card.expDate
+  this.balanceDollars = card.balanceDollars
+  this.balanceCents = card.balanceCents
+  this.transactions = card.transactions.map((transaction) => {
+    return new Transaction(transaction)
   })
 }
 

@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="amount" data-ng-class="{credit: transaction.type == 'credit', deduction: transaction.type =='deduction'}">
-                <span>{{transaction.amountDollars}}</span>
+                <span>${{transaction.amountDollars}}.</span>
                 <span class="cents">{{transaction.amountCents}}</span>
               </div>
             </div>

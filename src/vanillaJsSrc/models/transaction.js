@@ -1,20 +1,20 @@
-function Transaction(title, description, type, date, amountDollars, amountCents){
-  this.title = title
-  this.descriptio = descriptio
-  this.type = type
-  this.date = date
-  this.amountDollars = amountDollars
-  this.amountCents = amountCents
+function Transaction(transaction){
+  this.title = transaction.title
+  this.description = transaction.description
+  this.type = transaction.type
+  this.date = transaction.date
+  this.amountDollars = transaction.amountDollars
+  this.amountCents = transaction.amountCents
 }
 
 Transaction.prototype = {
-  formatDateWithDay
+  formatDate
 }
 
-function formatDateWithDay(date){
+function formatDate(){
   let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-  let month = months[date.getMonth()]
-  let year = date.getFullYear().toString()
-  let day = date.getDate()
+  let month = months[this.date.getMonth()]
+  let year = this.date.getFullYear().toString()
+  let day = this.date.getDate()
   return `${day} ${month}, ${year}`
 }
