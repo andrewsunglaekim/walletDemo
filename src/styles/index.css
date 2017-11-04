@@ -94,7 +94,8 @@ div.transaction {
       border: 2px solid #ccc;
       border-radius: 50%;
       height: 18px;
-      width: 18px; }
+      width: 18px;
+      color: #555; }
   div.transaction div.middle {
     flex: 8; }
     div.transaction div.middle div.title {
